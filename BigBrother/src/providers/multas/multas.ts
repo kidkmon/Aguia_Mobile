@@ -12,14 +12,14 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 export class MultasProvider {
 
   // private API_URL = 'http://192.168.0.32:3030/v1';
-  private API_URL = 'http://192.168.0.32:80';
+  private API_URL = 'http://192.168.0.20:80/aguia-api';
 
 
   constructor(public http: Http) {  }
 
-  readMultas(){
+  readMultas(id_usuario){
     return new Promise((resolve, reject) =>{
-      let url = this.API_URL + '/multas';
+      let url = this.API_URL + '/multa/read_group.php?id_usuario=' + id_usuario;
 
       this.http.get(url).subscribe((result:any) => {
         resolve(result.json());
@@ -32,7 +32,7 @@ export class MultasProvider {
 
   readMultaInfo(id){
     return new Promise((resolve, reject) =>{
-      let url = this.API_URL + '/multas/' + id;
+      let url = this.API_URL + '/multa/read_one.php?id_multa=' + id;
 
       this.http.get(url).subscribe((result:any) => {
         resolve(result.json());
@@ -50,8 +50,8 @@ export class MultasProvider {
     let options = new RequestOptions({headers: headers});
 
     return new Promise((resolve,reject) => {
-      this.http.post(this.API_URL + '/multas/create.php', multa, options).subscribe((result: any) => {
-        resolve(result.json());
+      this.http.post(this.API_URL + '/multa/create.php', multa, options).subscribe((result: any) => {
+        resolve(result);
       },
       (error) => {
         reject(error.json());

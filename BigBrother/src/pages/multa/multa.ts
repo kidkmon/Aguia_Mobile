@@ -20,7 +20,7 @@ export class MultaPage {
   public multa = {
     descricao_multa: "",
     placa_veiculo_multa: "",
-    status_multa: "0",
+    status_multa: 0,
     url_imagem_multa: "",
     id_usuario: 1,
     id_oficial: 1
@@ -38,9 +38,8 @@ export class MultaPage {
     }
 
     this.camera.getPicture(options).then((imageData) => {
-      // let base64Image = 'data:image/jpeg;base64,' + imageData;
-      // this.multa.url_imagem_multa = base64Image;
-      this.multa.url_imagem_multa = imageData;
+      let base64Image = 'data:image/jpeg;base64,' + imageData;
+      this.multa.url_imagem_multa = base64Image;
     }, (err) => {
       console.log(err);
     });
