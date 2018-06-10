@@ -1,12 +1,7 @@
+import { MultaInfoPage } from './../multa-info/multa-info';
+import { MultasProvider } from './../../providers/multas/multas';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the ProfilePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,11 +10,24 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProfilePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  private multas: Array<{}>;
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private multaProvider: MultasProvider) {
+    this.getMultas();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfilePage');
+  getMultas() {
+    this.multaProvider.readMultas().then((result: any) => {
+      console.log(result);
+      this.multas = result;
+    }).catch((error: any) => {
+      console.log(error);
+    })
+  }
+
+  getMultaInfo(multa){
+    this.navCtrl.push(MultaInfoPage, {'multa' : multa});
   }
 
 }
