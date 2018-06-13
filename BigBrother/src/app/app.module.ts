@@ -1,3 +1,4 @@
+import { LoginPage } from './../pages/login/login';
 import { MultaInfoPage } from './../pages/multa-info/multa-info';
 import { MultaPage } from './../pages/multa/multa';
 import { NgModule, ErrorHandler } from '@angular/core';
@@ -14,6 +15,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Camera } from '@ionic-native/camera';
 import { MultasProvider } from '../providers/multas/multas';
+import { UserProvider } from '../providers/user/user';
+import { RegisterPage } from '../pages/register/register';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { MultasProvider } from '../providers/multas/multas';
     ProfilePage,
     TabsPage,
     MultaPage,
-    MultaInfoPage
+    MultaInfoPage,
+    LoginPage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
@@ -36,14 +41,17 @@ import { MultasProvider } from '../providers/multas/multas';
     ProfilePage,
     TabsPage,
     MultaPage,
-    MultaInfoPage
+    MultaInfoPage,
+    LoginPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Camera,
-    MultasProvider
+    MultasProvider,
+    UserProvider
   ]
 })
 export class AppModule {}

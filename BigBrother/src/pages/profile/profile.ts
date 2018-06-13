@@ -18,7 +18,7 @@ export class ProfilePage {
   }
 
   getMultas() {
-    this.multaProvider.readMultas().then((result: any) => {
+    this.multaProvider.readMultas(3).then((result: any) => {
       console.log(result);
       this.multas = result;
     }).catch((error: any) => {

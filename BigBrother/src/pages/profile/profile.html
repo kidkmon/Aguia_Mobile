@@ -12,7 +12,7 @@
   <ion-list>
     <button ion-item *ngFor="let multa of multas" (click)="getMultaInfo(multa)">
       <ion-card>
-        <img src="http://192.168.0.32:3030/assets/img/uploads/{{ multa.img }}" />
+        <img src="{{ multa.url_imagem_multa }}" />
         <ion-card-content>
           <ion-card-title>
             {{ multa.descricao_multa }}
