@@ -1,18 +1,33 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Perfil</ion-title>
+    <ion-title>
+      <p>
+        <img src="assets/imgs/eagle_eye4.png" alt="Águia" align="middle"/>
+      </p>
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding style="background-color: lightgray">
 
   <ion-list>
-    <button ion-item *ngFor="let multa of multas" (click)="getMultaInfo(multa)">
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/imgs/eagle_eye5.png">
+      </ion-avatar>
+      <h2>Marty McFly</h2>
+      <p>@martymcfly</p>
+      <p>Alguma frase reflexiva</p>
+    </ion-item>
+  </ion-list>
+  <h3 style="text-align: center">Histórico</h3>
+  <ion-list>
+    <button style="background-color: lightgray" ion-item *ngFor="let multa of multas" (click)="getMultaInfo(multa)">
       <ion-card>
-        <img src="{{ multa.url_imagem_multa }}" />
+        <img src="{{ multa.url_imagem_multa }}"/>
         <ion-card-content>
           <ion-card-title>
             {{ multa.descricao_multa }}

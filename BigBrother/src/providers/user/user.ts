@@ -6,7 +6,7 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 export class UserProvider {
 
   // private API_URL = 'http://192.168.0.32:3030/v1';
-  private API_URL = 'http://localhost/aguia-api';
+  private API_URL = 'http://192.168.0.32/aguia-api';
 
   
   constructor(public http: Http) {  }
