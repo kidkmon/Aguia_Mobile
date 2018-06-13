@@ -18,6 +18,8 @@ import { MultasProvider } from '../providers/multas/multas';
 import { UserProvider } from '../providers/user/user';
 import { RegisterPage } from '../pages/register/register';
 
+import {Ionic2MaskDirective} from "ionic2-mask-directive";
+
 @NgModule({
   declarations: [
     MyApp,
@@ -27,7 +29,8 @@ import { RegisterPage } from '../pages/register/register';
     MultaPage,
     MultaInfoPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    Ionic2MaskDirective
   ],
   imports: [
     BrowserModule,

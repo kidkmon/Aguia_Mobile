@@ -11,16 +11,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class ProfilePage {
 
   private multas: Array<{}>;
-
+  private id_usuario:number;
+  private user = {
+    id: 0,
+    name: "",
+    email: ""
+  }
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private multaProvider: MultasProvider) {
+    this.user = this.navParams.get('user');
+    console.log(this.user);
     this.getMultas();
   }
 
   getMultas() {
-    this.multaProvider.readMultas(3).then((result: any) => {
+    console.log(this.user.id);
+    this.multaProvider.readMultas(this.user.id).then((result: any) => {
       console.log(result);
-      this.multas = result;
+      if(result.message != 'No multas found.'){
+        this.multas = result;
+      }
     }).catch((error: any) => {
       console.log(error);
     })

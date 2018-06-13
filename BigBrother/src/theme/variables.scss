@@ -44,6 +44,26 @@ $colors: (
   dark:       #222
 );
 
+.tabbar {
+	a.tab-button[aria-selected=true]:nth-of-type(1) {
+		color: color($colors,dark);
+		.tab-button-icon {
+			color: color($colors,dark);
+		}
+	}
+	a.tab-button[aria-selected=true]:nth-of-type(2) {
+		color: color($colors,dark);
+		.tab-button-icon {
+			color: color($colors,dark);
+		}
+	}
+	a.tab-button[aria-selected=true]:nth-of-type(3) {
+		color: color($colors,dark);
+		.tab-button-icon {
+			color: color($colors,dark);
+		}
+	}
+}
 
 // App iOS Variables
 // --------------------------------------------------

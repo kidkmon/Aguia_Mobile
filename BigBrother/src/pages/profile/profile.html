@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="light">
     <ion-title>
       <p>
         <img src="assets/imgs/eagle_eye4.png" alt="Águia" align="middle"/>
@@ -16,11 +16,11 @@
   <ion-list>
     <ion-item>
       <ion-avatar item-start>
-        <img src="assets/imgs/eagle_eye5.png">
+        <img src="assets/imgs/unnamed.jpg">
       </ion-avatar>
-      <h2>Marty McFly</h2>
-      <p>@martymcfly</p>
-      <p>Alguma frase reflexiva</p>
+      <h2>{{ user.nome }}</h2>
+      <p>Email: {{ user.email}}</p>
+      <p>A justiça pode demorar, mas tem uma hora que todo mundo paga seus pecados!</p>
     </ion-item>
   </ion-list>
   <h3 style="text-align: center">Histórico</h3>

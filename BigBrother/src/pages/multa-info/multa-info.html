@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="light">
     <ion-title>
       <p>
         <img src="assets/imgs/eagle_eye4.png" alt="Águia" align="middle"/>
@@ -21,7 +21,7 @@
   <h3 style="text-align: center">Informações da Multa</h3>
   
   <ion-card>
-    <img src="http://192.168.0.32:3030/assets/img/uploads/{{ multa.img }}"/>
+    <img src="{{ multa.url_imagem_multa }}"/>
 
     <ion-card-content>
       <ion-card-title>
@@ -30,8 +30,7 @@
       <p>
         Placa do Veículo: <strong>{{ multa.placa_veiculo_multa }}</strong><br>
         Status da Multa: <strong>{{ multa.status_multa }}</strong><br>
-        Data de criação da multa: <strong>{{ multa.created_at }}</strong><br>
-        Data da ultima atualização da multa: <strong>{{ multa.updated_at }}</strong>
+        Data de criação da multa: <strong>{{ multa.hora_multa }}</strong><br>
       </p>
     </ion-card-content>
   </ion-card>
