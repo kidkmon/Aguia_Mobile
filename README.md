@@ -10,8 +10,8 @@ Aguia Mobile is a Web App using IONIC3 to capture drivers who are committing tra
 * [Pages](https://github.com/kidkmon/Aguia_Mobile/tree/master/BigBrother/src/pages)
 * [Providers](https://github.com/kidkmon/Aguia_Mobile/tree/master/BigBrother/src/providers)
 
-## Libraries
-The libraries used in the project were:
+## Frameworks
+The framwork used in the project was:
    * [Ionic](https://ionicframework.com)
    
 <br/>
